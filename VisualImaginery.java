@@ -92,11 +92,13 @@ public VisualImagery(){
       {
         SPOTriplet triplet = run.peek();
 
-        prg += triplet.s;
-        prg += triplet.p;
-        prg += triplet.o;
+        prg += triplet.getSubject;
+        prg += triplet.getPredicate;
+        prg += triplet.getObject;
 
-        graphics.drawString("" + triplet.s + "." + triplet.p + "(" + triplet.o + ")", 5, 256 - (++stmt_counter) * 28);
+        graphics.drawString("" + triplet.getSubject + "." + 
+				triplet.getPredicate + "(" + 
+				triplet.getObject + ")", 5, 256 - (++stmt_counter) * 28);
 
         run.poll();
       }
